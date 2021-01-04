@@ -115,7 +115,18 @@ void TRANSFORM(int A[][MaxN], int m, int n, int TA[][3])
     TA[0][2] = t;
 }
 
-
+#define MaxN 1000
+void STOREAB(int A[][MaxN], int n, int B[])
+{
+    int i, j, k = 0;
+    for(j = 0; j < n; j++)
+    {
+        for(i = j+1; i < n; i++)
+        {
+            B[k++] = A[i][j];
+        }
+    }
+}
 
 
 
