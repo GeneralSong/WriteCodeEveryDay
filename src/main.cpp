@@ -128,6 +128,17 @@ void STOREAB(int A[][MaxN], int n, int B[])
     }
 }
 
+#define MaxN 100
+int MATRIXA(int TA[][3], int A[][MaxN])
+{
+    int i, j;
+    for(i = 1; i < TA[0][2]; i++)
+    {
+        A[TA[i][0]-1][TA[i][1]-1] = TA[i][2];
+        A[TA[i][1]-1][TA[i][0]-1] = TA[i][2];
+    }
+    return TA[0][0];
+}
 
 
 
