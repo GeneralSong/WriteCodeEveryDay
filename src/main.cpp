@@ -140,7 +140,20 @@ int MATRIXA(int TA[][3], int A[][MaxN])
     return TA[0][0];
 }
 
-
+void MOVE(int A[], int n, int k)
+{
+    int count, i;
+    int tmp;
+    for(count = 1; count <= k; count++)
+    {
+        tmp = A[n-1];
+        for(i = n-1; i >= 0; i--)
+        {
+            A[i+1] = A[i];
+        }
+        A[0] = tmp;
+    }
+}
 
 
 
