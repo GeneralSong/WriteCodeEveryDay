@@ -155,7 +155,27 @@ void MOVE(int A[], int n, int k)
     }
 }
 
-
+void MOVE1(int A[], int n, int k)
+{
+    int count = 1, i = 0, j = 0;
+    int temp;
+    while(count < n)
+    {
+        j = (j+k)%n;
+        if(j != i)
+        {
+            temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+        }
+        else
+        {
+            i++;
+            j++;
+        }
+        count++;
+    }
+}
 
 
 
