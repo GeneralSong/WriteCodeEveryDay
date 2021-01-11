@@ -197,7 +197,23 @@ void MOVE2(int A[], int n, int k)
 	REVERSE(A, 0, n-1);
 }
 
-
+#define MaxN 100
+#define M 3*n-2
+void EXSTORE(int A[][MaxN], int n, int B[M])
+{
+	int i, j, k;
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
+			if(A[i][j] != 0)
+			{
+				k = 2 * i + j - 3;
+				B[k] = A[i][j];
+			}
+		}
+	}
+}
 
 
 
