@@ -215,7 +215,26 @@ void EXSTORE(int A[][MaxN], int n, int B[M])
 	}
 }
 
-
+#define MaxN 100
+int MULT(int A[][MaxN], int n)
+{
+	int i, j, s=1;
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n;  j++)
+		{
+			scanf("%d",&A[i][j]);
+		}
+	}	
+	for(i = 0; i < n; i++)
+	{
+		s = s * A[i][i] * A[i][n-i-1];
+	}
+	if(A[n/2][n/2] != 0)
+	{
+		s/=A[n/2][n/2];
+	}
+}
 
 
 
