@@ -236,7 +236,23 @@ int MULT(int A[][MaxN], int n)
 	}
 }
 
-
+#define MaxN 100
+int ACCUMULATE(int A[][MaxN], int m, int n)
+{
+	int sum = 0;
+	int k;
+	for(k = 0; k < n; k++)
+	{
+		sum += A[0][k];
+		sum += A[m-1][k];
+	}
+	for(k = 1; k < m-1; k++)
+	{
+		sum += A[k][0];
+		sum += A[k][n-1];
+	}
+	return sum;
+}
 
 
 
