@@ -254,7 +254,24 @@ int ACCUMULATE(int A[][MaxN], int m, int n)
 	return sum;
 }
 
+#define MaxN 100
+void REVOLVE(int A[][MaxN], int n)
+{
+	int i, j;
+	int temp;
+	for(i = 0; i < n/2; i++)
+	{
+		for(j = i; j < n-i-1; j++)
+		{
+			temp = A[i][j];
+			A[i][j] = A[n-j-1][i];
+			A[n-j-1][i] = A[n-i-1][n-j-1];
+			A[n-i-1][n-j-1] = A[j][n-i-1];
+			A[j][n-i-1] = temp;
+		}
+	}
 
+}
 
 
 
