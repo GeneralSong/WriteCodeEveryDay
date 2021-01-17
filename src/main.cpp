@@ -273,7 +273,36 @@ void REVOLVE(int A[][MaxN], int n)
 
 }
 
-
+#define MaxN 100
+int SADDLE(int A[][MaxN], int m, int n)
+{
+	int min, max;
+	int i, j, ii, jj;
+	for(i = 0; i < m; i++)
+	{	
+		min = A[i][0];
+		jj = 0;
+		for(j = 1; j < n; j++)
+		{
+			if(A[i][j] < min)
+			{
+				min = A[i][j];
+				jj = j;
+			}
+		}
+		max = A[i][j];
+		ii = 0;
+		while(ii < m && max >= A[ii][jj])
+		{
+			ii++;
+			if(ii > m-1)
+			{
+				return A[i][jj];
+			}
+		}
+	}
+	return 0;
+}
 
 
 
